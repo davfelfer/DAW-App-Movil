@@ -14,6 +14,19 @@
 
     <script>
     
+  // Bloquear envio vacio
+        
+            function desbloquear(){
+            var talonario = document.getElementById('formulario');
+            var button = document.getElementById('guardar');
+            if (talonario.checkValidity()) {
+                button.disabled=false; 
+                }
+            else {
+                button.disabled=true; 
+            }
+                
+        }   
                 
     </script>
     
@@ -53,15 +66,17 @@
 
 <form class="form-horizontal" action="/action_page.php" id="formulario" name="formulario">
   Seleccione la fecha y hora de su evento: <br>
-  <input type="datetime-local" id="fecha" name="fecha" required> <br>
+  <input type="datetime-local" id="fecha" name="fecha" required onkeyup="desbloquear()"> <br>
   
  Evento: <br>  
- <input type="text" id="evento" name="evento" required> <br>
-  <input href= "#" type="submit" id="guardar" name="guardar" formaction="index.html" value="Send">
+ <input type="text" id="evento" name="evento" required onkeyup="desbloquear()"> <br>
+  <input href= "#" type="submit" id="guardar" name="guardar" formaction="index.html" value="Send" disabled >
 </form>
 
     
 </div>
+    
+   
     
     <script type="text/javascript" src="js/guardar.js"></script>
     <script type="text/javascript" src="js/llenar.js"></script>
@@ -111,11 +126,31 @@ var contador = arrayEvento.length;
     }
       
     }
-}
 
+    
+
+}
 </script>
 
-  
+<footer>
+        
+            <div class="row">
+
+            <div class="col span-1-of-2">
+                <ul class="footer-nav"></ul>
+            </div>
+            
+        </div>
+
+
+
+        <div class=" row">
+           <center>
+               <p class="pfooter">Copyright &copy;  Tu Agenda Diaria: uso exclusivo de la asignatura DAW-2017/2018 (David Féliz)</p>
+            </center>
+        </div>
+    
+    </footer>
     
 </body>
 </html>
