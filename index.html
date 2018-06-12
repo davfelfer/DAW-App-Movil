@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Agenda</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <script>
+    
+                
+    </script>
+    
+</head>
+
+    
+<body background="http://images.1iphone5wallpaper.com/Gallery/02_Patterns/1-iPhone-5s-wallpaper-hd-patterns-abstract-parallax-white-105.JPG" onload="javascript:fechaHora()" text="white">
+    
+
+<div class="container">
+
+  <h2>Agenda</h2>
+  <p class="lead">
+   La agenda para tus eventos diarios! 
+  </p>
+<h5> <div id="fechaActual" style="text-align: right"></div>  <hr /> </h5>
+
+  <div class="agenda">
+    <div class="table-responsive">
+      <table class="table table-condensed table-bordered" id="tabla">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Evento</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+        </tbody>
+      </table>
+    </div>
+  </div>
+    
+    <h2>Programe su evento</h2>
+
+<form class="form-horizontal" action="/action_page.php" id="formulario" name="formulario">
+  Seleccione la fecha y hora de su evento: <br>
+  <input type="datetime-local" id="fecha" name="fecha" required> <br>
+  
+ Evento: <br>  
+ <input type="text" id="evento" name="evento" required> <br>
+  <input href= "#" type="submit" id="guardar" name="guardar" formaction="index.html" value="Send">
+</form>
+
+    
+</div>
+    
+    <script type="text/javascript" src="js/guardar.js"></script>
+    <script type="text/javascript" src="js/llenar.js"></script>
+
+<script>
+    function alerta(){
+        
+        navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+            if (navigator.vibrate) {
+                navigator.vibrate(2000);
+            } 
+            else {alert('Su navegador no soporta la funcion de vibrar.')}
+            }
+
+    
+    
+    function fechaHora(){
+
+    var d = new Date();
+    var n1 = d.getFullYear();
+    var n2 = d.getMonth()+1; if(n2<10) {n2='0'+n2};
+    var n3 = d.getDate(); if(n3<10) {n3='0'+n3};
+    var n4 = d.getHours(); if(n4<10) {n4='0'+n4};
+    var n5 = d.getMinutes(); if(n5<10) {n5='0'+n5};
+    
+    document.getElementById("fechaActual").innerHTML = n1+'-'+n2+'-'+n3+' '+n4+':'+n5;
+    
+
+setTimeout('fechaHora()',60000);
+
+
+
+
+    
+var contador = arrayEvento.length;
+    for(var i=0; i<contador; i++){
+        console.log(document.getElementById("fechaActual").innerHTML)
+        console.log(arrayFechaHora[i])
+    
+        
+    if (document.getElementById("fechaActual").innerHTML.toString() == arrayFechaHora[i].toString()){
+      
+        
+        navigator.vibrate(2000);
+        alert('La hora del evento: '+arrayEvento[i]+' ha llegado!');
+         alerta(); 
+    }
+      
+    }
+
+    
+
+}
+</script>
+
+
+    
+    
+</body>
+</html>
